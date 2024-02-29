@@ -13,7 +13,24 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <p>Prueba</p>
+        <h1>
+            Mi primera página WEB
+            <!--{% if  categories%}
+                Si hay datos
+            {% else %}
+                No hay datos
+            {% endif %}-->
+        </h1>
+        {% block content %}
+            <a href = "{% url "vista2" %}">Click</a>
+            <ul>
+                {% for category in categories%}
+                    <li>{{category.id}} / {{category.name}}</li>
+                {% endfor %}
+            </ul>
+        {% endblock content %}
+        <p>dos</p>
+        <p>{{name}}</p>
         <script src="" async defer></script>
     </body>
 </html>
